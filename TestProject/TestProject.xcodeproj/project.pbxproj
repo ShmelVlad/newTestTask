@@ -13,6 +13,7 @@
 		861535B620E4F3FF007FF247 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 861535B420E4F3FF007FF247 /* Main.storyboard */; };
 		861535B820E4F402007FF247 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 861535B720E4F402007FF247 /* Assets.xcassets */; };
 		861535BB20E4F402007FF247 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 861535B920E4F402007FF247 /* LaunchScreen.storyboard */; };
+		86A07ABF20E4F7B8007E14DF /* BaseApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86A07ABE20E4F7B8007E14DF /* BaseApi.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		861535B720E4F402007FF247 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		861535BA20E4F402007FF247 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		861535BC20E4F402007FF247 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		86A07ABE20E4F7B8007E14DF /* BaseApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseApi.swift; sourceTree = "<group>"; };
 		AC24D6B33360BE3BCA43A4B8 /* Pods-TestProject.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TestProject.release.xcconfig"; path = "Pods/Target Support Files/Pods-TestProject/Pods-TestProject.release.xcconfig"; sourceTree = "<group>"; };
 		CD5E5F049654E4022228FB86 /* Pods_TestProject.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TestProject.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -61,14 +63,47 @@
 		861535AF20E4F3FF007FF247 /* TestProject */ = {
 			isa = PBXGroup;
 			children = (
+				86A07AC220E4F7E8007E14DF /* DomainLayer */,
+				86A07AC020E4F7C0007E14DF /* PresentationLayer */,
+				86A07ABD20E4F79D007E14DF /* NetworkLayer */,
 				861535B020E4F3FF007FF247 /* AppDelegate.swift */,
-				861535B220E4F3FF007FF247 /* ViewController.swift */,
-				861535B420E4F3FF007FF247 /* Main.storyboard */,
 				861535B720E4F402007FF247 /* Assets.xcassets */,
 				861535B920E4F402007FF247 /* LaunchScreen.storyboard */,
 				861535BC20E4F402007FF247 /* Info.plist */,
 			);
 			path = TestProject;
+			sourceTree = "<group>";
+		};
+		86A07ABD20E4F79D007E14DF /* NetworkLayer */ = {
+			isa = PBXGroup;
+			children = (
+				86A07ABE20E4F7B8007E14DF /* BaseApi.swift */,
+			);
+			path = NetworkLayer;
+			sourceTree = "<group>";
+		};
+		86A07AC020E4F7C0007E14DF /* PresentationLayer */ = {
+			isa = PBXGroup;
+			children = (
+				86A07AC120E4F7CE007E14DF /* MainScene */,
+			);
+			path = PresentationLayer;
+			sourceTree = "<group>";
+		};
+		86A07AC120E4F7CE007E14DF /* MainScene */ = {
+			isa = PBXGroup;
+			children = (
+				861535B420E4F3FF007FF247 /* Main.storyboard */,
+				861535B220E4F3FF007FF247 /* ViewController.swift */,
+			);
+			path = MainScene;
+			sourceTree = "<group>";
+		};
+		86A07AC220E4F7E8007E14DF /* DomainLayer */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = DomainLayer;
 			sourceTree = "<group>";
 		};
 		94660A07FE2D0D67B01403FE /* Frameworks */ = {
@@ -204,6 +239,7 @@
 			files = (
 				861535B320E4F3FF007FF247 /* ViewController.swift in Sources */,
 				861535B120E4F3FF007FF247 /* AppDelegate.swift in Sources */,
+				86A07ABF20E4F7B8007E14DF /* BaseApi.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
