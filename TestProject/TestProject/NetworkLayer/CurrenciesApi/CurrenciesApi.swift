@@ -9,11 +9,11 @@
 import Foundation
 
 protocol GetCurrenciesApi {
-    func getCurrencies(model: RequestModel, result: @escaping (Response<CurrenciesModel>) -> Void)
+    func getCurrencies(model: CurrenciesRequstModel, result: @escaping (Response<CurrenciesModel>) -> Void)
 }
 
-class CurrencyApi: BaseApi<CurrenciesModel>, GetCurrenciesApi {
-    func getCurrencies(model: RequestModel, result: @escaping (Response<CurrenciesModel>) -> Void) {
+final class CurrencyApi: BaseApi<CurrenciesModel>, GetCurrenciesApi {
+    func getCurrencies(model: CurrenciesRequstModel, result: @escaping (Response<CurrenciesModel>) -> Void) {
         super.call(with: model.request) { (response) in
             result(response)
         }

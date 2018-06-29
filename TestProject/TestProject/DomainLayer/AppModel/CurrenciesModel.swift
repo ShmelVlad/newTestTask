@@ -15,9 +15,23 @@ struct CurrenciesModel: Decodable {
 struct Currency: Decodable {
     var name: String
     var price: PriceModel
+    var volume: Int
 }
 
 struct PriceModel: Decodable {
     var currency: String
     var amount: Double
+}
+
+
+extension CurrenciesModel: Bindable {
+    typealias DataType = Currency
+    
+    func getCount() -> Int {
+        return stock.count
+    }
+    
+    func item(index: Int) -> Currency {
+        return stock[index]
+    }
 }

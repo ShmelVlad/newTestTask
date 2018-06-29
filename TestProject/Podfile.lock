@@ -1,20 +1,25 @@
 PODS:
   - Alamofire (4.6.0)
   - Dip (6.0)
+  - Dip-UI (2.0):
+    - Dip (~> 6.0)
 
 DEPENDENCIES:
   - Alamofire (~> 4.5)
   - Dip
+  - Dip-UI
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
     - Alamofire
     - Dip
+    - Dip-UI
 
 SPEC CHECKSUMS:
   Alamofire: f41a599bd63041760b26d393ec1069d9d7b917f4
   Dip: 316ad036509eaf3ef78e19699f32a9e01a5b3c3e
+  Dip-UI: 80616044fdf76a86f6504d33d5f0b20c82df71e3
 
-PODFILE CHECKSUM: de17dfe604af36cc93f75920250f98ab39f60111
+PODFILE CHECKSUM: 5b2b273b6a0f00a2daee0c34e7417c192cfeadfb
 
 COCOAPODS: 1.5.3
