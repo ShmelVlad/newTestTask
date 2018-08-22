@@ -9,6 +9,8 @@
 import Foundation
 
 class CurrencyUseCase: Interactor {
+    // Возможно execute можно вынести в Interactor
+    // Получится дженерик usecase
     private var mainThreadExecutor: MainThreadExecutor
     private var backgroundThreadExecutor: BackgroundThreadExecutor
     private var api: GetCurrenciesApi
