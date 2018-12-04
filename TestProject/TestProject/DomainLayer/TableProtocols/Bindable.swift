@@ -12,5 +12,6 @@ protocol Bindable {
     associatedtype DataType
     
     func getCount() -> Int
+    func appendItems(_ items: [DataType])
     func item(index: Int) -> DataType
 }

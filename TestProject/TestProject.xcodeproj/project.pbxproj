@@ -24,7 +24,7 @@
 		861DBA8620E61BF500619755 /* Bindable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 861DBA8520E61BF500619755 /* Bindable.swift */; };
 		861DBA8820E61C1500619755 /* Configuratable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 861DBA8720E61C1500619755 /* Configuratable.swift */; };
 		861DBA8A20E61D7F00619755 /* CellConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 861DBA8920E61D7F00619755 /* CellConfigurator.swift */; };
-		861DBA8C20E61DC800619755 /* CurrenciesCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 861DBA8B20E61DC800619755 /* CurrenciesCell.swift */; };
+		861DBA8C20E61DC800619755 /* NewsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 861DBA8B20E61DC800619755 /* NewsCell.swift */; };
 		863444B120E5123A005BE3CC /* MainThreadExecutor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 863444B020E5123A005BE3CC /* MainThreadExecutor.swift */; };
 		863444B320E5125B005BE3CC /* BackgroundThreadExecutor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 863444B220E5125B005BE3CC /* BackgroundThreadExecutor.swift */; };
 		863444B620E512A8005BE3CC /* ThreadExecutor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 863444B520E512A8005BE3CC /* ThreadExecutor.swift */; };
@@ -35,7 +35,9 @@
 		86A07ACB20E4FCE5007E14DF /* ExceptionsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86A07ACA20E4FCE5007E14DF /* ExceptionsModel.swift */; };
 		86A07ACF20E4FDF0007E14DF /* CurrenciesApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86A07ACE20E4FDF0007E14DF /* CurrenciesApi.swift */; };
 		86A07AD220E4FEE1007E14DF /* ErrorModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86A07AD120E4FEE1007E14DF /* ErrorModel.swift */; };
-		86A07AD420E4FF51007E14DF /* CurrenciesModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86A07AD320E4FF51007E14DF /* CurrenciesModel.swift */; };
+		86A07AD420E4FF51007E14DF /* News.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86A07AD320E4FF51007E14DF /* News.swift */; };
+		86C6C56F21A5BDA8007176FD /* ImageLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86C6C56E21A5BDA8007176FD /* ImageLoader.swift */; };
+		86C6C57221A5BEA2007176FD /* ImageLoaderService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86C6C57121A5BEA2007176FD /* ImageLoaderService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -58,7 +60,7 @@
 		861DBA8520E61BF500619755 /* Bindable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bindable.swift; sourceTree = "<group>"; };
 		861DBA8720E61C1500619755 /* Configuratable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Configuratable.swift; sourceTree = "<group>"; };
 		861DBA8920E61D7F00619755 /* CellConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellConfigurator.swift; sourceTree = "<group>"; };
-		861DBA8B20E61DC800619755 /* CurrenciesCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrenciesCell.swift; sourceTree = "<group>"; };
+		861DBA8B20E61DC800619755 /* NewsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsCell.swift; sourceTree = "<group>"; };
 		863444B020E5123A005BE3CC /* MainThreadExecutor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainThreadExecutor.swift; sourceTree = "<group>"; };
 		863444B220E5125B005BE3CC /* BackgroundThreadExecutor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundThreadExecutor.swift; sourceTree = "<group>"; };
 		863444B520E512A8005BE3CC /* ThreadExecutor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThreadExecutor.swift; sourceTree = "<group>"; };
@@ -69,7 +71,9 @@
 		86A07ACA20E4FCE5007E14DF /* ExceptionsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExceptionsModel.swift; sourceTree = "<group>"; };
 		86A07ACE20E4FDF0007E14DF /* CurrenciesApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrenciesApi.swift; sourceTree = "<group>"; };
 		86A07AD120E4FEE1007E14DF /* ErrorModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorModel.swift; sourceTree = "<group>"; };
-		86A07AD320E4FF51007E14DF /* CurrenciesModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrenciesModel.swift; sourceTree = "<group>"; };
+		86A07AD320E4FF51007E14DF /* News.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = News.swift; sourceTree = "<group>"; };
+		86C6C56E21A5BDA8007176FD /* ImageLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageLoader.swift; sourceTree = "<group>"; };
+		86C6C57121A5BEA2007176FD /* ImageLoaderService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageLoaderService.swift; sourceTree = "<group>"; };
 		AC24D6B33360BE3BCA43A4B8 /* Pods-TestProject.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TestProject.release.xcconfig"; path = "Pods/Target Support Files/Pods-TestProject/Pods-TestProject.release.xcconfig"; sourceTree = "<group>"; };
 		CD5E5F049654E4022228FB86 /* Pods_TestProject.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TestProject.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -107,6 +111,7 @@
 		861535AF20E4F3FF007FF247 /* TestProject */ = {
 			isa = PBXGroup;
 			children = (
+				86C6C57021A5BE93007176FD /* ImageLoader */,
 				861DBA7C20E6122000619755 /* AppContainer */,
 				863444AF20E5121D005BE3CC /* ThreadExecutors */,
 				86A07AC220E4F7E8007E14DF /* DomainLayer */,
@@ -158,7 +163,7 @@
 			children = (
 				861DBA8020E61B6D00619755 /* MainTableDataSource.swift */,
 				861DBA8920E61D7F00619755 /* CellConfigurator.swift */,
-				861DBA8B20E61DC800619755 /* CurrenciesCell.swift */,
+				861DBA8B20E61DC800619755 /* NewsCell.swift */,
 			);
 			path = TableResources;
 			sourceTree = "<group>";
@@ -221,6 +226,7 @@
 		86A07AC220E4F7E8007E14DF /* DomainLayer */ = {
 			isa = PBXGroup;
 			children = (
+				86C6C56D21A5BD96007176FD /* ImageLoader */,
 				861DBA8420E61BE000619755 /* TableProtocols */,
 				861DBA7920E60DDD00619755 /* ViewControllerProtocols */,
 				861DBA7620E60D0A00619755 /* BaseViewController */,
@@ -286,7 +292,7 @@
 		86A07AD520E50D63007E14DF /* AppModel */ = {
 			isa = PBXGroup;
 			children = (
-				86A07AD320E4FF51007E14DF /* CurrenciesModel.swift */,
+				86A07AD320E4FF51007E14DF /* News.swift */,
 			);
 			path = AppModel;
 			sourceTree = "<group>";
@@ -306,6 +312,22 @@
 				861DBA6D20E6068700619755 /* CurrencyUseCase.swift */,
 			);
 			path = CurrencyUseCase;
+			sourceTree = "<group>";
+		};
+		86C6C56D21A5BD96007176FD /* ImageLoader */ = {
+			isa = PBXGroup;
+			children = (
+				86C6C56E21A5BDA8007176FD /* ImageLoader.swift */,
+			);
+			path = ImageLoader;
+			sourceTree = "<group>";
+		};
+		86C6C57021A5BE93007176FD /* ImageLoader */ = {
+			isa = PBXGroup;
+			children = (
+				86C6C57121A5BEA2007176FD /* ImageLoaderService.swift */,
+			);
+			path = ImageLoader;
 			sourceTree = "<group>";
 		};
 		94660A07FE2D0D67B01403FE /* Frameworks */ = {
@@ -403,13 +425,11 @@
 				"${SRCROOT}/Pods/Target Support Files/Pods-TestProject/Pods-TestProject-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/Dip/Dip.framework",
-				"${BUILT_PRODUCTS_DIR}/Dip-UI/Dip_UI.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Dip.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Dip_UI.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -445,14 +465,16 @@
 				861535B120E4F3FF007FF247 /* AppDelegate.swift in Sources */,
 				863444B620E512A8005BE3CC /* ThreadExecutor.swift in Sources */,
 				861DBA7020E60BCE00619755 /* ViewControllerPresenter.swift in Sources */,
-				86A07AD420E4FF51007E14DF /* CurrenciesModel.swift in Sources */,
+				86A07AD420E4FF51007E14DF /* News.swift in Sources */,
+				86C6C57221A5BEA2007176FD /* ImageLoaderService.swift in Sources */,
 				861DBA8820E61C1500619755 /* Configuratable.swift in Sources */,
 				861DBA8620E61BF500619755 /* Bindable.swift in Sources */,
 				861DBA7820E60D1A00619755 /* BaseViewController.swift in Sources */,
 				86A07AC520E4F888007E14DF /* BaseRequestModel.swift in Sources */,
 				86A07AC820E4FC72007E14DF /* ResponseModel.swift in Sources */,
 				863444B320E5125B005BE3CC /* BackgroundThreadExecutor.swift in Sources */,
-				861DBA8C20E61DC800619755 /* CurrenciesCell.swift in Sources */,
+				861DBA8C20E61DC800619755 /* NewsCell.swift in Sources */,
+				86C6C56F21A5BDA8007176FD /* ImageLoader.swift in Sources */,
 				86A07ACF20E4FDF0007E14DF /* CurrenciesApi.swift in Sources */,
 				861DBA8A20E61D7F00619755 /* CellConfigurator.swift in Sources */,
 				861DBA6E20E6068700619755 /* CurrencyUseCase.swift in Sources */,
@@ -613,7 +635,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = CUP7B7HJGJ;
 				INFOPLIST_FILE = TestProject/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -633,7 +655,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = CUP7B7HJGJ;
 				INFOPLIST_FILE = TestProject/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

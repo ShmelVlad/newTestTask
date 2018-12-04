@@ -6,7 +6,6 @@ target 'TestProject' do
   use_frameworks!
     pod 'Alamofire', '~> 4.5'
     pod "Dip"
-    pod "Dip-UI"
   # Pods for TestProject
 
 end

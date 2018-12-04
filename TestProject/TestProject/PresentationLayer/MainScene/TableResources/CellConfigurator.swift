@@ -8,19 +8,21 @@
 
 import Foundation
 
-class CurrenciesCellConfigurator: NSObject, Configuratable {
+class NewsCellConfigurator: NSObject, Configuratable {
     
-    typealias DataType = Currency
+    typealias DataType = News
     
-    typealias CellType = CurrenciesCell
+    typealias CellType = NewsCell
     
     static func getId() -> String {
-        return "testCurrency"
+        return "news"
     }
     
-    static func configurate(cell: CurrenciesCell, data: Currency) {
+    static func configurate(cell: NewsCell, data: News) {
         cell.bind(data: data)
     }
     
-    
+    static func clear(cell: NewsCell) {
+        cell.clear()
+    }
 }

@@ -10,7 +10,6 @@ import Foundation
 
 import Foundation
 import Dip
-import Dip_UI
 
 class AppContainer {
     
@@ -32,11 +31,11 @@ class AppContainer {
             
             container.collaborate(with: mainContainer)
             
-            container.register(.weakSingleton) { CurrencyApi() as GetCurrenciesApi }
+            container.register(.weakSingleton) { NewsApi() as GetNewsApi }
             
-            container.register(.weakSingleton) { MainTableDS<CurrenciesCellConfigurator, CurrenciesModel>()}
+            container.register(.weakSingleton) { MainTableDS<NewsCellConfigurator, ListNews>()}
             
-            container.register(.weakSingleton) { CurrencyUseCase(api: $0, mainThreadExecutor: $1, backgroundThreadExecutor: $2) }
+            container.register(.weakSingleton) { NewsUseCase(api: $0, mainThreadExecutor: $1, backgroundThreadExecutor: $2) }
 
             container.register(.weakSingleton) { ViewControllerPresenter(usecase: $0) }
             
@@ -47,8 +46,8 @@ class AppContainer {
                     scene.bind(presenter: mainPresenter)
                     mainPresenter.subscribe(on: scene)
                     
-                    let ds = try! container.resolve() as MainTableDS<CurrenciesCellConfigurator, CurrenciesModel>
-                    ds.setupData(data: CurrenciesModel(stock: []))
+                    let ds = try! container.resolve() as MainTableDS<NewsCellConfigurator, ListNews>
+                    ds.setupData(data: ListNews(news: []))
                     scene.setup(ds: ds)
                 })
             try! container.bootstrap()

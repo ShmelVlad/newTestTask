@@ -8,12 +8,12 @@
 
 import Foundation
 
-protocol GetCurrenciesApi {
-    func getCurrencies(model: CurrenciesRequstModel, result: @escaping (Response<CurrenciesModel>) -> Void)
+protocol GetNewsApi {
+    func getNews(model: NewsRequstModel, result: @escaping (Response<ListNews>) -> Void)
 }
 
-final class CurrencyApi: BaseApi<CurrenciesModel>, GetCurrenciesApi {
-    func getCurrencies(model: CurrenciesRequstModel, result: @escaping (Response<CurrenciesModel>) -> Void) {
+final class NewsApi: BaseApi<ListNews>, GetNewsApi {
+    func getNews(model: NewsRequstModel, result: @escaping (Response<ListNews>) -> Void) {
         super.call(with: model.request) { (response) in
             result(response)
         }

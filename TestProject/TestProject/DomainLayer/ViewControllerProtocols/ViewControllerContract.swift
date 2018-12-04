@@ -9,6 +9,7 @@
 import Foundation
 
 protocol ViewControllerContract: class {
-    func loaded(currencies: CurrenciesModel)
+    func loaded(news: ListNews)
     func loadFailed(with error: ErrorModel)
+    func updated(news: [ListNews])
 }

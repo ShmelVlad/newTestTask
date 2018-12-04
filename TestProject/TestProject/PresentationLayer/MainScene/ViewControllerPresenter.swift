@@ -12,31 +12,55 @@ class ViewControllerPresenter: BasePresenter, VCPresenterContract {
     
     typealias SceneType = ViewControllerContract
     
-    private weak var scene: ViewControllerContract?
-    private var usecase: CurrencyUseCase
-    private var timer: Timer!
+    private weak var _scene: ViewControllerContract?
+    private var _usecase: NewsUseCase
+    private var _cachedPages: [ListNews] = []
     
-    
-    init(usecase: CurrencyUseCase) {
-        self.usecase = usecase
+    init(usecase: NewsUseCase) {
+        _usecase = usecase
     }
     
     func subscribe(on scene: ViewControllerContract) {
-        self.scene = scene
+        _scene = scene
     }
     
-    func getCyrrencies() {
-        timer = Timer.scheduledTimer(withTimeInterval: 15, repeats: true, block: { [weak self] (timer) in
-            self?.usecase.execute { (response) in
-                switch response {
+    func getNews() {
+        if _cachedPages.last?.next == nil && _cachedPages.count != 0 {
+            return
+        }
+        _usecase.execute(page: _cachedPages.count + 1) { [weak self] (response) in
+            switch response {
                 case .success(let model):
-                    self?.scene?.loaded(currencies: model)
+                    self?._scene?.loaded(news: model)
+                    self?._cachedPages.append(model)
                 case .error(let error):
-                    self?.scene?.loadFailed(with: error)
+                    self?._scene?.loadFailed(with: error)
+            }
+        }
+    }
+    func updateNews() {
+        let pagesCount = _cachedPages.count
+        _cachedPages = []
+        let group = DispatchGroup()
+        
+        for page in 1..<pagesCount + 1 {
+            group.enter()
+            _usecase.execute(page: page) { [weak self] (response) in
+                guard let this = self else { return }
+                group.leave()
+                
+                switch response {
+                    case .success(let model):
+                        this._cachedPages.append(model)
+                        break
+                    case .error(_):
+                        break
                 }
             }
-        })
+        }
         
-        timer.fire()
+        group.notify(queue: .main) {
+            self._scene?.updated(news: self._cachedPages)
+        }
     }
 }

@@ -9,5 +9,6 @@
 import Foundation
 
 protocol VCPresenterContract: class {
-    func getCyrrencies()
+    func getNews()
+    func updateNews()
 }

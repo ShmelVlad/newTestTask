@@ -14,29 +14,29 @@ protocol RequestModel {
     var request: URLRequest {get}
 }
 
-enum CurrenciesRequstModel {
-    case getСurrencies()
+enum NewsRequstModel {
+    case getNews(page: Int)
 }
 
-extension CurrenciesRequstModel: RequestModel {
+extension NewsRequstModel: RequestModel {
     
     var url: URL {
         switch  self {
-            case .getСurrencies():
-                return URL(string: "http://phisix-api3.appspot.com/stocks.json")!
+            case .getNews(let page):
+                return URL(string: "http://api.flatun.com/api/feed_item/?page=\(page)")!
         }
     }
     
     var data: Data? {
         switch self {
-            case .getСurrencies():
+            case .getNews(_):
                 return nil
         }
     }
     
     var request: URLRequest {
         switch self {
-            case .getСurrencies():
+            case .getNews(_):
                 let request = URLRequest(url: url, cachePolicy: .reloadIgnoringLocalCacheData, timeoutInterval: 60)
                 return request
         }

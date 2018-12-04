@@ -8,30 +8,32 @@
 
 import Foundation
 
-class CurrencyUseCase: Interactor {
-    private var mainThreadExecutor: MainThreadExecutor
-    private var backgroundThreadExecutor: BackgroundThreadExecutor
-    private var api: GetCurrenciesApi
+class NewsUseCase: Interactor {
+    private var _mainThreadExecutor: MainThreadExecutor
+    private var _backgroundThreadExecutor: BackgroundThreadExecutor
+    private var _api: GetNewsApi
     
-    var callback: ((Response<CurrenciesModel>) -> Void)?
+    private var _callback: ((Response<ListNews>) -> Void)?
+    private var _page: Int!
     
-    init(api: GetCurrenciesApi, mainThreadExecutor: MainThreadExecutor, backgroundThreadExecutor: BackgroundThreadExecutor) {
-        self.api = api
-        self.mainThreadExecutor = mainThreadExecutor
-        self.backgroundThreadExecutor = backgroundThreadExecutor
+    init(api: GetNewsApi, mainThreadExecutor: MainThreadExecutor, backgroundThreadExecutor: BackgroundThreadExecutor) {
+        _api = api
+        _mainThreadExecutor = mainThreadExecutor
+        _backgroundThreadExecutor = backgroundThreadExecutor
     }
     
     func run() {
-        api.getCurrencies(model: CurrenciesRequstModel.getСurrencies()) { [weak self] (result) in
-            self?.mainThreadExecutor.execute {
-                self?.callback?(result)
+        _api.getNews(model: .getNews(page: _page)) { [weak self] (result) in
+            self?._mainThreadExecutor.execute {
+                self?._callback?(result)
             }
         }
     }
     
-    func execute(callback:@escaping (Response<CurrenciesModel>) -> Void) {
-        self.callback = callback
-        backgroundThreadExecutor.execute(usecase: self)
+    func execute(page: Int, callback:@escaping (Response<ListNews>) -> Void) {
+        _callback = callback
+        _page = page
+        _backgroundThreadExecutor.execute(usecase: self)
         
     }
     

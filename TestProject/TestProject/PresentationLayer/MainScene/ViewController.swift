@@ -13,51 +13,74 @@ class ViewController: BaseViewController<ViewControllerPresenter> {
 
     private var presenter: VCPresenterContract!
     
-    @IBOutlet weak var table: UITableView!
+    @IBOutlet private weak var _table: UITableView!
     
-    private var ds: MainTableDS<CurrenciesCellConfigurator, CurrenciesModel>!
+    private var _ds: MainTableDS<NewsCellConfigurator, ListNews>!
+    private lazy var _refresh: UIRefreshControl = { [unowned self] in
+        let refresh = UIRefreshControl()
+        refresh.addTarget(self, action: #selector(updateNews), for: .valueChanged)
+       return refresh
+    }()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        table.dataSource = ds
-        presenter.getCyrrencies()
+        _table.dataSource = _ds
+        _table.delegate = _ds
         
+        _ds.loadMore { [weak self] in
+            self?.presenter.getNews()
+        }
+        
+        if #available(iOS 10.0, *) {
+            _table.refreshControl = _refresh
+        } else {
+            _table.addSubview(_refresh)
+        }
+        presenter.getNews()
     }
 
-    @IBAction func getCurrencies(_ sender: Any) {
-        presenter.getCyrrencies()
-    }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
 
     override func bind(presenter: ViewControllerPresenter) {
         self.presenter = presenter
     }
     
-    public func setup(ds: MainTableDS<CurrenciesCellConfigurator, CurrenciesModel>) {
-        self.ds = ds
+    public func setup(ds: MainTableDS<NewsCellConfigurator, ListNews>) {
+        _ds = ds
     }
     
     override func didInstantiateFromStoryboard(_ container: DependencyContainer, tag: DependencyContainer.Tag?) throws {
         try! container.resolveDependencies(of: self as ViewController, tag: tag)
     }
+    
+    @objc
+    private func updateNews() {
+        presenter.updateNews()
+    }
+    
 }
 
 extension ViewController: ViewControllerContract {
     func loadFailed(with error: ErrorModel) {
-// Если нужно чтобы был прогресс бар
-//        super.progressBarWillHide()
         super.showAlert(with: error.errorMessage, title: "Произошла ошибка")
     }
     
-    func loaded(currencies: CurrenciesModel) {
-// Если нужно чтобы был прогресс бар
-//        super.progressBarWillHide()
-        ds.setupData(data: currencies)
-        table.reloadData()
+    func loaded(news: ListNews) {
+        _ds.append(elemtens: news.results)
+        _table.reloadData()
+    }
+    
+    func updated(news: [ListNews]) {
+        let linearNews = news.flatMap { (item) -> [News] in
+            return item.results
+        }
         
-    }    
+        let list = ListNews(news: linearNews)
+        _ds.setupData(data: list)
+        _table.reloadData()
+        _refresh.endRefreshing()
+    }
 }
 

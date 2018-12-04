@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import Dip_UI
 import Dip
 
 class BaseViewController<PresenterType: BasePresenter>: UIViewController, StoryboardInstantiatable {

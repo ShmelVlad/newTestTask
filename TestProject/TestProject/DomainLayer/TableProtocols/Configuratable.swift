@@ -15,4 +15,5 @@ protocol Configuratable {
     
     static func getId() -> String
     static func configurate(cell: CellType, data: DataType)
+    static func clear(cell: CellType)
 }
